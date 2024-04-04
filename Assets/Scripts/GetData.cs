@@ -6,16 +6,23 @@ using TMPro;
 
 public class GetData : MonoBehaviour
 {
-    public TMP_Text accelerometerText;
+    public TextMeshProUGUI accelerometerText;
 
 
     void Start()
     {
         //check if we have a accelerometer
-        if(SystemInfo.supportsAccelerometer)
+        if (SystemInfo.supportsAccelerometer)
         {
-            
+            accelerometerText.text = "Accelerometer Supported";
         }
+        else
+        {
+            accelerometerText.text = "Accelerometer Not Supported";
+        }
+
+
+
     }
 
     // Update is called once per frame
