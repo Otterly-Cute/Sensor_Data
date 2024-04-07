@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Windows.Devices.Sensors;
 
 public class Get_Data : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class Get_Data : MonoBehaviour
     public int number;
     public Array dataPoints = new int[arraySize];
     private static int arraySize = 200;
+
+    private Altimeter
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +36,7 @@ public class Get_Data : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void NumberOfDataPoints()
@@ -43,5 +48,17 @@ public class Get_Data : MonoBehaviour
     public void AddDataPointToArray()
     {
 
+    }
+
+    private void ScenarioGetData(object sender, RoutedEventArgs e)
+    {
+        if (null != sensor)
+        {
+            AltimeterReading reading = sensor.GetCurrentReading();
+            if (null != reading)
+            {
+                ScenarioOutput_M.Text = String.Format("{0,5:0.00}", reading.AltitudeChangeInMeters);
+            }
+        }
     }
 }
