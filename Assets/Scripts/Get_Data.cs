@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using Windows.Devices.Sensors;
+//using Windows.Devices.Sensors;
 
 public class Get_Data : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class Get_Data : MonoBehaviour
     public Array dataPoints = new int[arraySize];
     private static int arraySize = 200;
 
-    private Altimeter
+   
 
 
 
@@ -50,7 +50,7 @@ public class Get_Data : MonoBehaviour
 
     }
 
-    private void ScenarioGetData(object sender, RoutedEventArgs e)
+   /* private void ScenarioGetData(object sender, RoutedEventArgs e)
     {
         if (null != sensor)
         {
@@ -60,5 +60,5 @@ public class Get_Data : MonoBehaviour
                 ScenarioOutput_M.Text = String.Format("{0,5:0.00}", reading.AltitudeChangeInMeters);
             }
         }
-    }
+    }*/
 }
